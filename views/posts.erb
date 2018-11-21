@@ -1,0 +1,43 @@
+<h1>Posts</h1>
+  <p>Search by user: </p>
+  <form action='/friendposts' method='get'>
+    <input type='text' name='search_name' placeholder='Search by user...'>
+    <input type='submit' value='Search'>
+  </form>
+  <%if session[:user]%>
+  <p>Bark something: </p><form action='/posts' method='post'>
+    <input type='text' name='post_title' placeholder="Bark title">
+    <input type='text' name='post_body' placeholder='Bark something!'>
+    <input type='submit' value='Woof!'>
+  </form>
+  <div class='row'>
+    <% @posts.first(20).each do |post| %>
+    <div class='col-4 blog-post'>
+      <h4><%=post.title%></h4>
+      <p><%=post.body%></p>
+      <p>Published by: <%=post.author%> on <%=post.created_at%></p>
+    </div>
+      <% end %>
+  </div>
+  <% else %>
+    <div class='row'>
+      <% @posts.first(20).each do |post| %>
+      <div class='col-4 blog-post'>
+        <h4><%=post.title%></h4>
+        <p><%=post.body%></p>
+        <p>Published by: <%=post.author%> on <%=post.created_at%></p>
+      </div>
+        <% end %>
+    </div>
+    <% end %>
+
+
+    <%#side note: John got this to display/hide with javascript add/remove hidden classes when a user avatar is clicked on %>
+
+    <!--posts.each(0..19)
+    if posts.length > 20 - make a page 2
+    on page 2 - if posts.length > 20 && < 40, posts.each(20..39)
+    else
+    posts.each(21..(posts.length)
+    if posts.length > 40 make page 3
+    on page 3 - if posts.length > 40 && < 60, posts.each(40..59) -->

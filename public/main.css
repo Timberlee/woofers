@@ -1,0 +1,66 @@
+h1 {
+  color: navy;
+  background-color: yellow;
+  padding-left: .5%;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 .5% 0 .5%; */
+  color: white;
+  font-weight: bold;
+  font-size: 16pt;
+  margin-bottom: .5%;
+}
+body {
+  background-color: #09f;
+  padding: .5% .5% .5% .5%;
+}
+/*.bootoon {
+  background-color: navy;
+  color: white;
+  border-radius: 5%;
+  font-size: 16pt;
+  padding: 5%;
+} */
+
+.btn {
+  background-color: navy;
+  color: white;
+  font-weight: bold;
+}
+.btn:hover {
+  color: yellow;
+  transition-delay: 0s;
+}
+.blog-post {
+  background-color: #ff6;
+  border-radius: 5%;
+  margin: 2% 0 0 11%;
+  padding: 2%;
+}
+.blog-post p{
+  color: navy;
+  size: 3em;
+}
+.blog-post a{
+  color: green;
+}
+a {
+  color: white;
+}
+p {
+  color: white;
+}
+.margin-left-stubborn {
+  margin-left: 18vw !important;
+}
+img {
+  max-width: 100%;
+}
+.main-pic {
+  max-height: 80vh;
+}
+.fit-pic {
+  max-height: 88vh;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta char='utf-8'>
+    <title>Woofers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <link rel="shortcut icon" type="images/paw-solid" href="favico.ico">
+  </head>
+  <nav>
+    <div id='navlinks'>
+      <a href='/'>Home</a>
+      <a href='/about_us'>About Us</a>
+      <a href='/sponsors'>Sponsors</a>
+      <a href='/woof'>Woof</a>
+      <a href='/resources'>Resources</a>
+      <% if session[:user] == nil %>
+        <a href='/posts'>All Posts</a>
+      <% else %>
+        <a href='/myposts'>My Posts</a>
+        <a href='/posts'>All Posts</a>
+      <% end %>
+    </div>
+    <div id='click_box'>
+      <% if session[:user] == nil %>
+      <a href='/login' class='btn btn-primary'>Log In</a>
+      <a href='/signup' class='btn btn-primary'>Sign Up</a>
+      <% else %>
+      <p>Currently logged in as: <%=session[:name]%> </p>
+      <a href='/account' class='btn btn-primary'>Account</a>
+      <a href='/logout' class='btn btn-primary'>Log Out</a>
+      <% end %>
+    </div>
+  </nav>
+  <body>
+    <%=yield%>
+  </body>
+</html>

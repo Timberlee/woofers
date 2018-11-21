@@ -1,0 +1,21 @@
+<h1>This is your account page, <%=session[:name] %></h1>
+<h2>We're barking right alongside you!</h2>
+<p>Your account information</p>
+<p>Name: <%=session[:name]%> <%=session[:lname]%></p>
+<p>Email: <%=session[:email]%></p>
+<p>Birthday: <%=session[:birthday]%>
+<p>Date joined: <%=session[:date_joined]%></p>
+<p>Make a post</p>
+<form action='/posts' method='post'>
+  <input type='text' name='post_title' placeholder="Bark title">
+  <input type='text' name='post_body' placeholder='Bark something!'>
+  <input type='submit' value='Woof!'>
+</form>
+<hr>
+<p>Delete Your Account</p>
+<form action='/account' method='post'>
+  <input type='password' name='password' placeholder='Enter Your Password' ><br>
+  <input type='submit' value='Delete'>
+</form>
+<%=session[:message]%>
+<hr>

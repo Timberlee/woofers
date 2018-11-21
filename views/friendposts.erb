@@ -1,0 +1,9 @@
+<div class='row'>
+  <% @friendposts.first(20).each do |post| %>
+  <div class='col-4 blog-post'>
+    <h4><%=post.title%></h4>
+    <p><%=post.body%></p>
+    <p>Published by: <%=post.author%> on <%=post.created_at%></p>
+  </div>
+    <% end %>
+</div>
